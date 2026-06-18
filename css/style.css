@@ -226,19 +226,46 @@ button:hover {
 }
 
 /* RODAPÉ */
+/* tentativa de melhorar rodape */
 footer {
     width: 100%;
     text-align: center;
-    padding: 2.5rem 0;
-    background-color: #f1f1f1;
+    padding: 25px 15px; 
+    background-color: #f4f7f6; 
     border-top: 1px solid #ddd;
     margin-top: auto;
+}
+
+.footer-author {
+    font-size: 1rem;
+    font-weight: 600; /* nome destacado */
+    color: var(--primary); 
+    margin-bottom: 6px;
+}
+
+/* sobre o link do seu Instagram */
+.footer-author a {
+    color: var(--primary); 
+    text-decoration: none; 
+    transition: color 0.2s ease; 
+}
+
+/* Efeito ao passar o mouse no nome */
+.footer-author a:hover {
+    color: var(--secondary); 
+    text-decoration: underline; 
+}
+
+.footer-info {
+    font-size: 0.85rem; 
+    color: #666; 
+    margin: 3px 0;
 }
 
 /* RESPONSIVIDADE */
 @media (max-width: 900px) {
     .api-grid-v2 {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets ..test */
     }
 }
 
@@ -248,7 +275,7 @@ footer {
         flex-direction: column;
     }
     .api-grid-v2 {
-        grid-template-columns: 1fr; /* 1 coluna em celulares */
+        grid-template-columns: 1fr; 
     }
     .input-group {
         flex-direction: column;
