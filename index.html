@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório Digital de Arquitetura</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Laboratório Digital de Arquitetura</h1>
+        <nav>
+            <button class="nav-link" data-section="bases-numericas">Bases Numéricas</button>
+            <button class="nav-link" data-section="logica-booleana">Lógica Booleana</button>
+            <button class="nav-link" data-section="api-extra">Curiosidades Math</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="bases-numericas" class="tab-content">
+            <h2>Conversão de Bases</h2>
+            <p>Converta valores entre diferentes bases numéricas com o passo a passo das divisões.</p>
+            
+            <div class="input-group">
+                <input type="text" id="valorInput" placeholder="Digite o valor (ex: 255 ou FF)">
+                <select id="baseOrigem">
+                    <option value="10">Decimal</option>
+                    <option value="2">Binário</option>
+                    <option value="16">Hexadecimal</option>
+                    <option value="8">Octal</option>
+                </select>
+                <span>para</span>
+                <select id="baseDestino">
+                    <option value="2">Binário</option>
+                    <option value="10">Decimal</option>
+                    <option value="16">Hexadecimal</option>
+                    <option value="8">Octal</option>
+                </select>
+                <button id="btnConverter">Converter</button>
+            </div>
+
+            <div id="resultadoBases" class="resultado-container">
+                </div>
+        </section>
+
+        <section id="logica-booleana" class="tab-content hidden">
+            <h2>Lógica Booleana</h2>
+            <p>Gere tabelas verdade para expressões lógicas usando A, B, C e D.</p>
+            
+            <div class="input-group">
+                <input type="text" id="expressaoInput" placeholder="Ex: A.B + C" style="flex: 1;">
+                <button id="btnGerarTabela">Gerar Tabela Verdade</button>
+            </div>
+
+            <div id="resultadoLogica" class="resultado-container">
+                </div>
+        </section>
+
+        <section id="api-extra" class="tab-content hidden">
+            <div id="api-data">
+                <p><em>Clique no menu para carregar os dados da API...</em></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Reiginaldo Rosa - Tecnologia em Sistemas - IFB</p>
+    </footer>
+
+    <script type="module" src="js/App.js"></script>
+</body>
+</html>

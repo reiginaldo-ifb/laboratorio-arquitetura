@@ -1,0 +1,257 @@
+/* Laboratório Digital de Arquitetura 
+   Estilo Consolidado - Versão Final (Microchip & Grid 3 Colunas)
+*/
+
+/* VARIÁVEIS GLOBAIS */
+:root {
+    --primary: #2c3e50;
+    --secondary: #e67e22;
+    --background: #f4f7f6;
+    --white: #ffffff;
+    --text: #333;
+    --accent: #3498db;
+}
+
+/* RESET E BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* CABEÇALHO COM CHIP ÚNICO */
+header {
+    background: linear-gradient(135deg, #1e2a38 0%, #2c3e50 100%);
+    color: var(--white);
+    padding: 3rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* O Microchip profissional via CSS (Evita duplicidade com HTML) */
+header h1::before {
+    content: "\1F4DF"; /* Ícone de Processador/Microchip */
+    font-size: 3rem;
+    filter: drop-shadow(0 0 8px var(--accent));
+}
+
+nav {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--white);
+    padding: 10px 24px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: var(--white);
+    color: var(--primary);
+    border-color: var(--white);
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    max-width: 1000px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+    width: 100%;
+}
+
+.tab-content {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.hidden {
+    display: none;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    border-bottom: 3px solid var(--secondary);
+    display: inline-block;
+}
+
+/* SEÇÃO DE CURIOSIDADES (API) - LAYOUT RECUPERADO */
+.api-card {
+    background-color: #fff5e6; /* Fundo Bege/Creme */
+    border-left: 8px solid #f39c12; /* Faixa Laranja lateral */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.api-header h3 {
+    color: #000;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.api-header p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* GRID DE 3 COLUNAS - ESSENCIAL */
+.api-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 12px;
+}
+
+.raca-card {
+    background: white;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.02);
+    align-items: center;
+}
+
+.raca-card strong {
+    color: #000;
+}
+
+.total-info {
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 15px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #444;
+    font-weight: bold;
+}
+
+/* COMPONENTES DE INTERAÇÃO */
+.input-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+button {
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+/* TABELAS E RESULTADOS */
+.resultado-container {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.tabela-verdade {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-verdade th, .tabela-verdade td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+.tabela-verdade th {
+    background-color: var(--primary);
+    color: white;
+}
+
+.resultado-bit {
+    font-weight: bold;
+    background-color: #fff8f0;
+    color: var(--secondary);
+}
+
+/* RODAPÉ */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 2.5rem 0;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+    margin-top: auto;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .api-grid-v2 {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    }
+}
+
+@media (max-width: 650px) {
+    header h1 {
+        font-size: 1.7rem;
+        flex-direction: column;
+    }
+    .api-grid-v2 {
+        grid-template-columns: 1fr; /* 1 coluna em celulares */
+    }
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
